@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-const BASE_URL = 'https://e-commerce-admin-production-11b2.up.railway.app/api/auth'
+const BASE_URL = 'https://e-commerce-admin-production-8195.up.railway.app/api/auth'
 
 interface User {
     id: number

@@ -55,10 +55,10 @@ export default function LoginForm() {
       // Redirección exitosa con manejo de caché
       router.push("/dashboard");
       router.refresh();
-    } catch (err) {
+    } catch (err: any) {
       setError("Ocurrió un error inesperado. Por favor, inténtalo más tarde.");
       dispatch(setFailed());
-      toast.error("Algo anda mal");
+      toast.error(err.data.message);
     } finally {
       setLoading(false);
     }
