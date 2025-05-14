@@ -17,7 +17,7 @@ interface DataResponse {
     data?: User[]
 }
 
-interface CredentialsRequest {
+export interface CredentialsRequest {
     email: string
     password: string
 }

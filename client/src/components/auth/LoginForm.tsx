@@ -5,12 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "sonner";
-import {
-  loginUserState,
-  setFailed,
-  setLoading,
-  logout,
-} from "../../features/auth/authSlice";
+import { loginUserState } from "../../features/auth/authSlice";
 import { useDispatch } from "react-redux";
 import TestCredentialsNotice from "../TestCredentialsNotice";
 
@@ -55,9 +50,9 @@ export default function LoginForm() {
       // Redirección exitosa con manejo de caché
       router.push("/dashboard");
       router.refresh();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       setError("Ocurrió un error inesperado. Por favor, inténtalo más tarde.");
-      dispatch(setFailed());
       toast.error(err.data.message);
     } finally {
       setLoading(false);

@@ -35,7 +35,7 @@ interface DataResponse {
   data?: Product[];
 }
 
-export interface CredentialsRequest {
+export interface CredentialsRequestProducts {
   name: string;
   image: string;
   description: string;
@@ -58,7 +58,7 @@ export const productApi = createApi({
         };
       },
     }),
-    createProducts: builder.mutation<DataResponse, CredentialsRequest>({
+    createProducts: builder.mutation<DataResponse, CredentialsRequestProducts>({
       query: (credentials) => {
         return {
           url: "/products",

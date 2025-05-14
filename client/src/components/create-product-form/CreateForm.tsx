@@ -5,7 +5,7 @@ import {
   useGetCategoriesQuery,
   useGetColorsQuery,
 } from "@/services/productApi";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { IoWarning } from "react-icons/io5";
 import { toast } from "sonner";
@@ -55,7 +55,8 @@ export default function CreateForm({ onClose }: { onClose: () => void }) {
       brand: JSON.parse(data.brand as unknown as string),
       category: JSON.parse(data.category as unknown as string),
       colors: Array.isArray(data.colors)
-        ? data.colors.map((c: any) => JSON.parse(c))
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        ? data.colors.map((c:any) => JSON.parse(c))
         : [],
     };
 
@@ -67,6 +68,7 @@ export default function CreateForm({ onClose }: { onClose: () => void }) {
       toast.success(response.data?.message)
       reset()
       onClose();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       setError(err.message);
     } finally {
