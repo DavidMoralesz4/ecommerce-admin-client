@@ -13,7 +13,7 @@ export function middleware(request: NextRequest) {
 
   if (token && pathname.startsWith('/login')) {
     // Si ya tiene token, redirige fuera de /login
-    return NextResponse.redirect(new URL('/dashboard', request.url))
+    return NextResponse.redirect(new URL('/', request.url))
   }
 
   return NextResponse.next()
