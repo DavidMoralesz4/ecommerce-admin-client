@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const BASE_URL = "https://e-commerce-admin-production-8195.up.railway.app/api";
+const BASE_URL = "http://localhost:8181/api";
 
 export interface Brand {
   id: number;
