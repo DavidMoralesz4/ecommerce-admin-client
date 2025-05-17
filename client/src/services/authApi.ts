@@ -24,7 +24,7 @@ export interface CredentialsRequest {
 
 export const authApi = createApi({
     reducerPath: 'authApi',
-    baseQuery: fetchBaseQuery({baseUrl: BASE_URL}),
+    baseQuery: fetchBaseQuery({baseUrl: BASE_URL, credentials: "include"}),
     endpoints: (builder) => ({
         loginUser: builder.mutation<DataResponse, CredentialsRequest>({
             query: (credentials) => {
