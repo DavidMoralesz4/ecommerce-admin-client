@@ -5,6 +5,7 @@ import "./globals.css";
 import { Providers } from "./providers";
 import { Toaster } from "sonner";
 import { PersistGateProvider } from "@/components/persistgate-provider/PersistGateProvider";
+import ProtectedRoutes from "@/components/protected-routes/ProtectedRoutes";
 
 const josefin_Sans = Josefin_Sans({
   variable: "--font-geist-sans",
@@ -33,7 +34,9 @@ export default async function RootLayout({
       >
         <Toaster />
         <Providers>
-          <PersistGateProvider>{children}</PersistGateProvider>
+          <ProtectedRoutes>
+            <PersistGateProvider>{children}</PersistGateProvider>
+          </ProtectedRoutes>
         </Providers>
       </body>
     </html>

@@ -5,12 +5,12 @@ import { FaChevronUp } from "react-icons/fa";
 import { FaChevronDown } from "react-icons/fa";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { RootState } from "@/features/store/store";
 import { toast } from "sonner";
-import { useLogoutUserMutation } from "@/features/services/authApi";
 import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { setFailed, setLoading, logout } from "../../features/auth/authSlice";
+import { useLogoutUserMutation } from "@/features/services/authApi";
+import { RootState } from "@/features/store/store";
 
 export default function ButtonAccountClient() {
   const [logoutModal, setLogoutModal] = useState(false);

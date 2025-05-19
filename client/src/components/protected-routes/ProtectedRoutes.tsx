@@ -1,6 +1,9 @@
+'use client'
+
+import Home from "@/app/page";
 import { RootState } from "@/features/store/store";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 
 export default function ProtectedRoutes({
@@ -11,5 +14,11 @@ export default function ProtectedRoutes({
   const isAuth = useSelector((state: RootState) => state.auth.isAuthenticate);
   const route = useRouter();
 
-  return isAuth ? <div>{children}</div> : route.push("/login");
+    useEffect(() => {
+    if (!isAuth) {
+      route.push("/login");
+    }
+  }, [isAuth, route]);
+
+  return isAuth ? <>{children}</> : <Home/>;
 }
