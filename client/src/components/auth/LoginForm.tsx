@@ -1,6 +1,6 @@
 "use client";
 
-import { useLoginUserMutation } from "@/services/authApi";
+import { useLoginUserMutation } from "@/features/services/authApi";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import CancelBtn from "../cancel-button-component/CancelBtn";
-import { CredentialsRequestProducts } from "@/services/productApi";
+import { CredentialsRequestProducts } from "@/features/services/productApi";
 
 
 

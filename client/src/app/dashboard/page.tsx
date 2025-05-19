@@ -3,7 +3,7 @@
 import ProductCard from "@/components/product-card-component/ProductCard";
 import SearchComponent from "@/components/SearchComponent";
 import ShowForm from "@/components/show-create-form-product/ShowForm";
-import { useGetProductsQuery } from "@/services/productApi";
+import { useGetProductsQuery } from "@/features/services/productApi";
 
 export default function DashboardPage() {
   const { data: getProducts, isLoading } = useGetProductsQuery();

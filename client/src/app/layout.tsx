@@ -4,6 +4,7 @@ import { Instrument_Sans } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import { Toaster } from "sonner";
+import { PersistGateProvider } from "@/components/persistgate-provider/PersistGateProvider";
 
 const josefin_Sans = Josefin_Sans({
   variable: "--font-geist-sans",
@@ -25,14 +26,15 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body
         className={`${josefin_Sans.className} ${instrument_Sans.className} antialiased`}
       >
         <Toaster />
-        <Providers>{children}</Providers>
+        <Providers>
+          <PersistGateProvider>{children}</PersistGateProvider>
+        </Providers>
       </body>
     </html>
   );

@@ -4,7 +4,7 @@ import {
   useGetBrandsQuery,
   useGetCategoriesQuery,
   useGetColorsQuery,
-} from "@/services/productApi";
+} from "@/features/services/productApi";
 import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { IoWarning } from "react-icons/io5";
