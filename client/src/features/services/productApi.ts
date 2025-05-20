@@ -48,7 +48,14 @@ export interface CredentialsRequestProducts {
 
 export const productApi = createApi({
   reducerPath: "productApi",
-  baseQuery: fetchBaseQuery({ baseUrl: BASE_URL, credentials: "include" }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: BASE_URL,
+    credentials: "include",
+    prepareHeaders: (headers, { getState }) => {
+      // Si necesitas añadir headers adicionales
+      return headers;
+    },
+  }),
   endpoints: (builder) => ({
     getProducts: builder.query<DataResponse, void>({
       query: () => {
