@@ -1,3 +1,4 @@
+import Image from "next/image";
 import CancelBtn from "../cancel-button-component/CancelBtn";
 import { CredentialsRequestProducts } from "@/features/services/productApi";
 
@@ -17,7 +18,7 @@ const ProductCard = ({
     <div className="relative max-w-sm w-full xl:w-[250px] bg-[#FFFFFF] rounded-[5px] shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer ">
         <CancelBtn/>
       <div className="flex justify-center p-4">
-        <img
+        <Image
           src={image}
           alt={name}
           width={200}

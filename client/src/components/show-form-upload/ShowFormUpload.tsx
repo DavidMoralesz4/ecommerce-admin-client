@@ -1,7 +1,6 @@
 'use client'
 import React, { useState } from 'react'
 import AddProductComponent from '../AddProductComponent';
-import CreateForm from '../create-product-form/CreateForm';
 import UploadFormComponent from '../uploadForm/UploadFormComponent';
 
 export default function ShowFormUpload() {
