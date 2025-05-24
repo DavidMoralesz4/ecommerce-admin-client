@@ -35,6 +35,11 @@ interface DataResponse {
   data?: Product[];
 }
 
+interface DataResponseString {
+  success: boolean;
+  message: string;
+}
+
 export interface CredentialsRequestProducts {
   name: string;
   image: string;
@@ -64,6 +69,16 @@ export const productApi = createApi({
           credentials: "include",
         };
       },
+    }),
+    uploadProducts: builder.mutation<DataResponseString, FormData>({
+      query: (formData) => {
+        return {
+          url: '/upload',
+          method: "POST",
+          credentials: "include",
+          body: formData
+        }
+      }
     }),
     createProducts: builder.mutation<DataResponse, CredentialsRequestProducts>({
       query: (credentials) => {
@@ -108,4 +123,5 @@ export const {
   useGetBrandsQuery,
   useGetCategoriesQuery,
   useGetColorsQuery,
+  useUploadProductsMutation
 } = productApi;

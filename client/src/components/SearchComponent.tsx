@@ -3,7 +3,7 @@ import { FiSearch } from "react-icons/fi";
 
 export default function SearchComponent() {
   return (
-    <div className="flex  max-w-md mx-auto shadow-sm rounded-2xl overflow-hidden">
+    <div className="flex max-w-md mx-auto shadow-sm rounded-2xl overflow-hidden">
       <input
         type="text"
         placeholder="camisa oversize..."

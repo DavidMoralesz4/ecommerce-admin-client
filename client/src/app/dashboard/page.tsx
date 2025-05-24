@@ -3,6 +3,7 @@
 import ProductCard from "@/components/product-card-component/ProductCard";
 import SearchComponent from "@/components/SearchComponent";
 import ShowForm from "@/components/show-create-form-product/ShowForm";
+import ShowFormUpload from "@/components/show-form-upload/ShowFormUpload";
 import { useGetProductsQuery } from "@/features/services/productApi";
 
 export default function DashboardPage() {
@@ -32,6 +33,7 @@ export default function DashboardPage() {
           {/* Filtros y botón */}
           <div className="flex flex-col md:flex-row gap-4">
             <SearchComponent />
+            <ShowFormUpload />
             <ShowForm />
           </div>
 

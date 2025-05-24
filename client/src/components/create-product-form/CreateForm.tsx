@@ -55,7 +55,7 @@ export default function CreateForm({ onClose }: { onClose: () => void }) {
       brand: JSON.parse(data.brand as unknown as string),
       category: JSON.parse(data.category as unknown as string),
       colors: Array.isArray(data.colors)
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
         ? data.colors.map((c:any) => JSON.parse(c))
         : [],
     };
